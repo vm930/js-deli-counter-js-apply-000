@@ -1,23 +1,38 @@
+let line = []
+let num = 0;
 
-function takeANumber (katzDeliLine, newCustomer){
+function takeANumber (katzDeliLine){
   //put newCustomer into an array
-  katzDeliLine.push(newCustomer);
-  
-  // take the name from Array
-  let numberInLine = katzDeliLine.indexOf(newCustomer) + 1;
-  
-  return `Welcome, ${newCustomer}. You are number ${numberInLine} in line.`;
+  num++;
+  katzDeliLine.push(num);
+  return `Welcome, you are at ${num}`; 
 }
+
+console.log(takeANumber(line))
+console.log(takeANumber(line))
+console.log(takeANumber(line))
+  
+  
+  // // take the name from Array
+  // let numberInLine = katzDeliLine.indexOf(newCustomer) + 1;
+  
+  // return `Welcome, ${newCustomer}. You are number ${numberInLine} in line.`; // welcome num, you are number ...
 
 
 function nowServing (katzDeliLine){
-  for (let i = 0; i < katzDeliLine.length; i++) {
-    //looping thru the array of customers and taking the frist element of the array out and assign it to a variable 
+  // for (let i = 0; i < katzDeliLine.length; i++) {
+  //   //looping thru the array of customers and taking the frist element of the array out and assign it to a variable 
+   
+   if (katzDeliLine.length === 0){
+     // case when the length is actually equal to 0
+    return `There is nobody waiting to be served!`;
+   }
+    else{
     let currentCustomer = katzDeliLine.shift(); 
     return `Currently serving ${currentCustomer}.`;
-  }
-    // case when the length is actually equal to 0
-    return `There is nobody waiting to be served!`;
+    }    
+  //}
+    
 }
 
 function currentLine (katzDeliLine) {
